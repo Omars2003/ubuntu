@@ -1,0 +1,47 @@
+    1  # "USER INFORMATION"
+    2  w
+    3  lastlog
+    4  last
+    5  faillog -a
+    6  cat /etc/passwd
+    7  cat /etc/shadow
+    8  cat /etc/group
+    9  cat /etc/sudoers
+   10  awk -F: '($3 == "0") {print}' /etc/passwd
+   11  egrep ':0+' /etc/passwd
+   12  #  "SYSTEM INFORMATION"
+   13  uname -a
+   14  uptime
+   15  timedatectl
+   16  mount
+   17  echo $PATH
+   18  #  "NETWORK INFORMATION"
+   19  ifconfig
+   20  netstat -antup
+   21  netstat -plantux
+   22  netstat -nap
+   23  route
+   24  arp -a
+   25  lsof -i
+   26  #  "SERVICE INFORMATION"
+   27  ps -aux
+   28  lsmod
+   29  lsof
+   30  #  "FILES, DRIVES AND SHARES INFORMATION"
+   31  df -ah
+   32  ls -la /etc/init.d
+   33  stat -x /etc/init.d/  # Sustituye por el archivo que quieras revisar
+   34  file /etc/init.d/     # Sustituye por el archivo que quieras identificar
+   35  lsattr -R / | grep "\-i\-"
+   36  ls -la /root
+   37  find / -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
+   38  find / -newermt 2017-01-02
+   39  find / -nouser
+   40  #  "POLICY, PATCH AND SETTINGS INFORMATION"
+   41  cat /etc/pam.d/common*
+   42  #  de "AUTORUN AND AUTOLOAD INFORMATION"
+   43  crontab -l
+   44  crontab -u root -l
+   45  cat /etc/crontab
+   46  ls /etc/cron.*
+   47  exec > /dev/tty
