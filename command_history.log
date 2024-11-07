@@ -30,8 +30,8 @@
    30  #  "FILES, DRIVES AND SHARES INFORMATION"
    31  df -ah
    32  ls -la /etc/init.d
-   33  stat -x /etc/init.d/  # Sustituye por el archivo que quieras revisar
-   34  file /etc/init.d/     # Sustituye por el archivo que quieras identificar
+   33  stat -x /etc/init.d/  
+   34  file /etc/init.d/     
    35  lsattr -R / | grep "\-i\-"
    36  ls -la /root
    37  find / -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print
